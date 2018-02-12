@@ -6,6 +6,7 @@ target 'movie_searcher' do
   use_frameworks!
 
   # Pods for movie_searcher
+	pod 'AlamofireImage', '~> 3.1'
 
   target 'movie_searcherTests' do
     inherit! :search_paths
