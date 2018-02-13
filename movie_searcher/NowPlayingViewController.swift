@@ -12,12 +12,15 @@ import AlamofireImage
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var refreshControl: UIRefreshControl!
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var refreshControl: UIRefreshControl!
     var movies: [[String: Any]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
         
@@ -34,6 +37,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
     
     func fetchMovies(){
+        self.activityIndicator.startAnimating()
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -43,11 +47,12 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         let task = session.dataTask(with: request) { (data, response, error) in
             
             if let error = error {
-                print(error.localizedDescription)
+                self.fetchMovies()
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
                 self.movies = dataDictionary["results"] as! [[String: Any]]
+                self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
                 
@@ -72,7 +77,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         if let posterPath = movie["poster_path"] as? String {
             let posterBaseUrl = "http://image.tmdb.org/t/p/w500"
             let posterUrl = URL(string: posterBaseUrl + posterPath)
-            cell.movieImage?.af_setImage(withURL: posterUrl!)
+            cell.movieImage.af_setImage(withURL: posterUrl!)
             
         }
         else {

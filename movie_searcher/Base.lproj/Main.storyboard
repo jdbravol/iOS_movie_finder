@@ -22,6 +22,11 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="lGR-kI-pz0">
+                                    <rect key="frame" x="0.0" y="209" width="375" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="181" id="Q0d-7j-K0a" customClass="MovieCell" customModule="movie_searcher" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="181"/>
@@ -53,6 +58,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="movieImage" destination="Cog-X3-s1B" id="iZ0-eX-9wR"/>
                                             <outlet property="overviewLabel" destination="4Em-5J-AAL" id="Tev-pS-Rth"/>
                                             <outlet property="titleLable" destination="E83-J1-Qw1" id="GqY-si-blc"/>
                                         </connections>
@@ -64,6 +70,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="lGR-kI-pz0" id="dGR-ku-0Ea"/>
                         <outlet property="tableView" destination="saj-U2-xk7" id="u0P-uh-GQL"/>
                     </connections>
                 </viewController>
