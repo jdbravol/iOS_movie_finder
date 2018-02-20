@@ -95,6 +95,14 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexpath = tableView.indexPath(for: cell){
+            let movie = movies[indexpath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.movie = movie
+        }
+    }
 
     /*
     // MARK: - Navigation
