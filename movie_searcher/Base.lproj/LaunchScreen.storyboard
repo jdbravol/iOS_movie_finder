@@ -18,19 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-cv-HaB">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-cv-HaB">
                                 <rect key="frame" x="118" y="264" width="138" height="139"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="Toy-Sb-7Wi"/>
+                                    <constraint firstAttribute="width" constant="138" id="dp8-ti-h34"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Searcher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEK-Wn-CiX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Searcher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEK-Wn-CiX">
                                 <rect key="frame" x="106" y="423" width="162" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FWc-cv-HaB" secondAttribute="trailing" constant="119" id="800-df-AES"/>
+                            <constraint firstItem="IEK-Wn-CiX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="HvM-kP-Njm"/>
+                            <constraint firstItem="FWc-cv-HaB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="244" id="NxQ-hA-Ae3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IEK-Wn-CiX" secondAttribute="trailing" constant="107" id="bLd-Db-vH8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IEK-Wn-CiX" secondAttribute="bottom" constant="215" id="gdc-EN-qpF"/>
+                            <constraint firstItem="IEK-Wn-CiX" firstAttribute="top" secondItem="FWc-cv-HaB" secondAttribute="bottom" constant="20" id="ng0-GA-tKU"/>
+                            <constraint firstItem="FWc-cv-HaB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="nwN-FD-zet"/>
+                            <constraint firstItem="IEK-Wn-CiX" firstAttribute="centerX" secondItem="FWc-cv-HaB" secondAttribute="centerX" id="q7r-oU-o5D"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
